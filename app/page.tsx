@@ -1,64 +1,31 @@
 "use client";
+import { useEffect, useState } from "react";
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+export default function HomePage() {
+    const [teams, setTeams] = useState<string[]>([]);
 
-export type Player = {
-    player_id: string;
-    name: string;
-    position: string;
-    team: string;
-    projectedPoints?: number;
-    rank?: number;
-};
-
-export default function DraftHelper({
-    leagueId,
-    userId,
-}: {
-    leagueId: string;
-    userId: string;
-}) {
-    const [available, setAvailable] = useState<Player[]>([]);
-    const [roster, setRoster] = useState<Record<string, Player[]>>({});
-    const [suggestion, setSuggestion] = useState<string>("");
-
-    useEffect(() => {
-        fetch(`/api/league-data`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ leagueId, userId }),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                setRoster(data.roster);
-                setAvailable(data.available);
-            });
-    }, [leagueId, userId]);
-
-    const suggestPick = async () => {
-        const response = await fetch("/api/gpt-suggest", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ roster, available: available.slice(0, 15) }),
-        });
-        const d = await response.json();
-        setSuggestion(d.suggestion);
+    const fetchTeams = async () => {
+        const res = await fetch("/api/yahoo");
+        const data = await res.json();
+        if (data.teamNames) {
+            setTeams(data.teamNames);
+        }
     };
 
     return (
         <div>
-            <h1>Auto-Fantasy Draft Helper</h1>
-            <Button onClick={suggestPick}>Suggest Pick</Button>
-            {suggestion && (
-                <Card>
-                    <CardContent>
-                        <h2>AI Suggestion</h2>
-                        <p>{suggestion}</p>
-                    </CardContent>
-                </Card>
-            )}
+            <h1 className="ml-5 mt-5">League Teams</h1>
+            <button
+                onClick={fetchTeams}
+                className="m-5 bg-slate-300 hover:bg-slate-500 rounded-lg"
+            >
+                Get All League Teams
+            </button>
+            <ul className="ml-5">
+                {teams.map((t) => (
+                    <li key={t}>{t}</li>
+                ))}
+            </ul>
         </div>
     );
 }
