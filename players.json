@@ -1,0 +1,702 @@
+[
+  {
+    "Player": "Saquon Barkley*+",
+    "Team": "PHI",
+    "Pos": "RB",
+    "FantPt": 322,
+    "OvRank": 1
+  },
+  {
+    "Player": "Derrick Henry*",
+    "Team": "BAL",
+    "Pos": "RB",
+    "FantPt": 317,
+    "OvRank": 2
+  },
+  {
+    "Player": "Jahmyr Gibbs*",
+    "Team": "DET",
+    "Pos": "RB",
+    "FantPt": 311,
+    "OvRank": 3
+  },
+  {
+    "Player": "Lamar Jackson*+",
+    "Team": "BAL",
+    "Pos": "QB",
+    "FantPt": 430,
+    "OvRank": 4
+  },
+  {
+    "Player": "Ja'Marr Chase*+",
+    "Team": "CIN",
+    "Pos": "WR",
+    "FantPt": 276,
+    "OvRank": 5
+  },
+  {
+    "Player": "Bijan Robinson*",
+    "Team": "ATL",
+    "Pos": "RB",
+    "FantPt": 281,
+    "OvRank": 6
+  },
+  {
+    "Player": "Josh Jacobs*",
+    "Team": "GNB",
+    "Pos": "RB",
+    "FantPt": 257,
+    "OvRank": 7
+  },
+  {
+    "Player": "Josh Allen*",
+    "Team": "BUF",
+    "Pos": "QB",
+    "FantPt": 379,
+    "OvRank": 8
+  },
+  {
+    "Player": "Joe Burrow*",
+    "Team": "CIN",
+    "Pos": "QB",
+    "FantPt": 373,
+    "OvRank": 9
+  },
+  {
+    "Player": "Kyren Williams",
+    "Team": "LAR",
+    "Pos": "RB",
+    "FantPt": 238,
+    "OvRank": 10
+  },
+  {
+    "Player": "James Cook*",
+    "Team": "BUF",
+    "Pos": "RB",
+    "FantPt": 235,
+    "OvRank": 11
+  },
+  {
+    "Player": "Justin Jefferson*+",
+    "Team": "MIN",
+    "Pos": "WR",
+    "FantPt": 214,
+    "OvRank": 12
+  },
+  {
+    "Player": "Baker Mayfield*",
+    "Team": "TAM",
+    "Pos": "QB",
+    "FantPt": 366,
+    "OvRank": 13
+  },
+  {
+    "Player": "Jonathan Taylor*",
+    "Team": "IND",
+    "Pos": "RB",
+    "FantPt": 227,
+    "OvRank": 14
+  },
+  {
+    "Player": "George Kittle*",
+    "Team": "SFO",
+    "Pos": "TE",
+    "FantPt": 159,
+    "OvRank": 15
+  },
+  {
+    "Player": "Jayden Daniels*",
+    "Team": "WAS",
+    "Pos": "QB",
+    "FantPt": 356,
+    "OvRank": 16
+  },
+  {
+    "Player": "De'Von Achane",
+    "Team": "MIA",
+    "Pos": "RB",
+    "FantPt": 222,
+    "OvRank": 17
+  },
+  {
+    "Player": "Amon-Ra St. Brown*+",
+    "Team": "DET",
+    "Pos": "WR",
+    "FantPt": 201,
+    "OvRank": 18
+  },
+  {
+    "Player": "Brian Thomas*",
+    "Team": "JAX",
+    "Pos": "WR",
+    "FantPt": 197,
+    "OvRank": 19
+  },
+  {
+    "Player": "Brock Bowers*+",
+    "Team": "LVR",
+    "Pos": "TE",
+    "FantPt": 151,
+    "OvRank": 20
+  },
+  {
+    "Player": "James Conner",
+    "Team": "ARI",
+    "Pos": "RB",
+    "FantPt": 207,
+    "OvRank": 21
+  },
+  {
+    "Player": "Joe Mixon*",
+    "Team": "HOU",
+    "Pos": "RB",
+    "FantPt": 205,
+    "OvRank": 22
+  },
+  {
+    "Player": "Terry McLaurin*",
+    "Team": "WAS",
+    "Pos": "WR",
+    "FantPt": 186,
+    "OvRank": 23
+  },
+  {
+    "Player": "Trey McBride*",
+    "Team": "ARI",
+    "Pos": "TE",
+    "FantPt": 139,
+    "OvRank": 24
+  },
+  {
+    "Player": "Chase Brown",
+    "Team": "CIN",
+    "Pos": "RB",
+    "FantPt": 201,
+    "OvRank": 25
+  },
+  {
+    "Player": "Drake London",
+    "Team": "ATL",
+    "Pos": "WR",
+    "FantPt": 181,
+    "OvRank": 26
+  },
+  {
+    "Player": "Chuba Hubbard",
+    "Team": "CAR",
+    "Pos": "RB",
+    "FantPt": 199,
+    "OvRank": 27
+  },
+  {
+    "Player": "Jonnu Smith*",
+    "Team": "MIA",
+    "Pos": "TE",
+    "FantPt": 134,
+    "OvRank": 28
+  },
+  {
+    "Player": "Mark Andrews",
+    "Team": "BAL",
+    "Pos": "TE",
+    "FantPt": 134,
+    "OvRank": 29
+  },
+  {
+    "Player": "Bucky Irving",
+    "Team": "TAM",
+    "Pos": "RB",
+    "FantPt": 197,
+    "OvRank": 30
+  },
+  {
+    "Player": "Alvin Kamara",
+    "Team": "NOR",
+    "Pos": "RB",
+    "FantPt": 197,
+    "OvRank": 31
+  },
+  {
+    "Player": "Aaron Jones",
+    "Team": "MIN",
+    "Pos": "RB",
+    "FantPt": 191,
+    "OvRank": 32
+  },
+  {
+    "Player": "Jared Goff*",
+    "Team": "DET",
+    "Pos": "QB",
+    "FantPt": 323,
+    "OvRank": 33
+  },
+  {
+    "Player": "David Montgomery",
+    "Team": "DET",
+    "Pos": "RB",
+    "FantPt": 186,
+    "OvRank": 34
+  },
+  {
+    "Player": "Mike Evans*",
+    "Team": "TAM",
+    "Pos": "WR",
+    "FantPt": 166,
+    "OvRank": 35
+  },
+  {
+    "Player": "Breece Hall",
+    "Team": "NYJ",
+    "Pos": "RB",
+    "FantPt": 184,
+    "OvRank": 36
+  },
+  {
+    "Player": "Malik Nabers*",
+    "Team": "NYG",
+    "Pos": "WR",
+    "FantPt": 165,
+    "OvRank": 37
+  },
+  {
+    "Player": "Bo Nix",
+    "Team": "DEN",
+    "Pos": "QB",
+    "FantPt": 316,
+    "OvRank": 38
+  },
+  {
+    "Player": "Jalen Hurts",
+    "Team": "PHI",
+    "Pos": "QB",
+    "FantPt": 315,
+    "OvRank": 39
+  },
+  {
+    "Player": "CeeDee Lamb*",
+    "Team": "DAL",
+    "Pos": "WR",
+    "FantPt": 162,
+    "OvRank": 40
+  },
+  {
+    "Player": "Sam LaPorta",
+    "Team": "DET",
+    "Pos": "TE",
+    "FantPt": 115,
+    "OvRank": 41
+  },
+  {
+    "Player": "Courtland Sutton",
+    "Team": "DEN",
+    "Pos": "WR",
+    "FantPt": 159,
+    "OvRank": 42
+  },
+  {
+    "Player": "Ladd McConkey",
+    "Team": "LAC",
+    "Pos": "WR",
+    "FantPt": 159,
+    "OvRank": 43
+  },
+  {
+    "Player": "Tucker Kraft",
+    "Team": "GNB",
+    "Pos": "TE",
+    "FantPt": 113,
+    "OvRank": 44
+  },
+  {
+    "Player": "Zach Ertz",
+    "Team": "WAS",
+    "Pos": "TE",
+    "FantPt": 111,
+    "OvRank": 45
+  },
+  {
+    "Player": "Davante Adams",
+    "Team": "2TM",
+    "Pos": "WR",
+    "FantPt": 156,
+    "OvRank": 46
+  },
+  {
+    "Player": "Sam Darnold*",
+    "Team": "MIN",
+    "Pos": "QB",
+    "FantPt": 308,
+    "OvRank": 47
+  },
+  {
+    "Player": "Jameson Williams",
+    "Team": "DET",
+    "Pos": "WR",
+    "FantPt": 154,
+    "OvRank": 48
+  },
+  {
+    "Player": "D'Andre Swift",
+    "Team": "CHI",
+    "Pos": "RB",
+    "FantPt": 173,
+    "OvRank": 49
+  },
+  {
+    "Player": "Jaxon Smith-Njigba*",
+    "Team": "SEA",
+    "Pos": "WR",
+    "FantPt": 153,
+    "OvRank": 50
+  },
+  {
+    "Player": "Jerry Jeudy*",
+    "Team": "CLE",
+    "Pos": "WR",
+    "FantPt": 151,
+    "OvRank": 51
+  },
+  {
+    "Player": "Garrett Wilson",
+    "Team": "NYJ",
+    "Pos": "WR",
+    "FantPt": 151,
+    "OvRank": 52
+  },
+  {
+    "Player": "Najee Harris",
+    "Team": "PIT",
+    "Pos": "RB",
+    "FantPt": 169,
+    "OvRank": 53
+  },
+  {
+    "Player": "Jordan Addison",
+    "Team": "MIN",
+    "Pos": "WR",
+    "FantPt": 150,
+    "OvRank": 54
+  },
+  {
+    "Player": "A.J. Brown",
+    "Team": "PHI",
+    "Pos": "WR",
+    "FantPt": 150,
+    "OvRank": 55
+  },
+  {
+    "Player": "Tee Higgins",
+    "Team": "CIN",
+    "Pos": "WR",
+    "FantPt": 149,
+    "OvRank": 56
+  },
+  {
+    "Player": "Pat Freiermuth",
+    "Team": "PIT",
+    "Pos": "TE",
+    "FantPt": 103,
+    "OvRank": 57
+  },
+  {
+    "Player": "Kyler Murray",
+    "Team": "ARI",
+    "Pos": "QB",
+    "FantPt": 297,
+    "OvRank": 58
+  },
+  {
+    "Player": "Travis Kelce*",
+    "Team": "KAN",
+    "Pos": "TE",
+    "FantPt": 98,
+    "OvRank": 59
+  },
+  {
+    "Player": "Nico Collins*",
+    "Team": "HOU",
+    "Pos": "WR",
+    "FantPt": 143,
+    "OvRank": 60
+  },
+  {
+    "Player": "Jayden Reed",
+    "Team": "GNB",
+    "Pos": "WR",
+    "FantPt": 142,
+    "OvRank": 61
+  },
+  {
+    "Player": "J.K. Dobbins",
+    "Team": "LAC",
+    "Pos": "RB",
+    "FantPt": 160,
+    "OvRank": 62
+  },
+  {
+    "Player": "Tony Pollard",
+    "Team": "TEN",
+    "Pos": "RB",
+    "FantPt": 160,
+    "OvRank": 63
+  },
+  {
+    "Player": "Rico Dowdle",
+    "Team": "DAL",
+    "Pos": "RB",
+    "FantPt": 159,
+    "OvRank": 64
+  },
+  {
+    "Player": "D.J. Moore",
+    "Team": "CHI",
+    "Pos": "WR",
+    "FantPt": 140,
+    "OvRank": 65
+  },
+  {
+    "Player": "Tyreek Hill",
+    "Team": "MIA",
+    "Pos": "WR",
+    "FantPt": 137,
+    "OvRank": 66
+  },
+  {
+    "Player": "Zay Flowers*",
+    "Team": "BAL",
+    "Pos": "WR",
+    "FantPt": 136,
+    "OvRank": 67
+  },
+  {
+    "Player": "Marvin Harrison Jr.",
+    "Team": "ARI",
+    "Pos": "WR",
+    "FantPt": 135,
+    "OvRank": 68
+  },
+  {
+    "Player": "Calvin Ridley",
+    "Team": "TEN",
+    "Pos": "WR",
+    "FantPt": 135,
+    "OvRank": 69
+  },
+  {
+    "Player": "Jauan Jennings",
+    "Team": "SFO",
+    "Pos": "WR",
+    "FantPt": 134,
+    "OvRank": 70
+  },
+  {
+    "Player": "Justin Herbert",
+    "Team": "LAC",
+    "Pos": "QB",
+    "FantPt": 285,
+    "OvRank": 71
+  },
+  {
+    "Player": "DeVonta Smith",
+    "Team": "PHI",
+    "Pos": "WR",
+    "FantPt": 131,
+    "OvRank": 72
+  },
+  {
+    "Player": "Jakobi Meyers",
+    "Team": "LVR",
+    "Pos": "WR",
+    "FantPt": 131,
+    "OvRank": 73
+  },
+  {
+    "Player": "Patrick Mahomes",
+    "Team": "KAN",
+    "Pos": "QB",
+    "FantPt": 282,
+    "OvRank": 74
+  },
+  {
+    "Player": "Brock Purdy",
+    "Team": "SFO",
+    "Pos": "QB",
+    "FantPt": 267,
+    "OvRank": 75
+  },
+  {
+    "Player": "Geno Smith",
+    "Team": "SEA",
+    "Pos": "QB",
+    "FantPt": 266,
+    "OvRank": 76
+  },
+  {
+    "Player": "Aaron Rodgers",
+    "Team": "NYJ",
+    "Pos": "QB",
+    "FantPt": 257,
+    "OvRank": 77
+  },
+  {
+    "Player": "Caleb Williams",
+    "Team": "CHI",
+    "Pos": "QB",
+    "FantPt": 255,
+    "OvRank": 78
+  },
+  {
+    "Player": "Jordan Love",
+    "Team": "GNB",
+    "Pos": "QB",
+    "FantPt": 234,
+    "OvRank": 9999
+  },
+  {
+    "Player": "C.J. Stroud",
+    "Team": "HOU",
+    "Pos": "QB",
+    "FantPt": 220,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Matthew Stafford",
+    "Team": "LAR",
+    "Pos": "QB",
+    "FantPt": 215,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Bryce Young",
+    "Team": "CAR",
+    "Pos": "QB",
+    "FantPt": 195,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Tua Tagovailoa",
+    "Team": "MIA",
+    "Pos": "QB",
+    "FantPt": 182,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Drake Maye*",
+    "Team": "NWE",
+    "Pos": "QB",
+    "FantPt": 177,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Kirk Cousins",
+    "Team": "ATL",
+    "Pos": "QB",
+    "FantPt": 176,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Russell Wilson*",
+    "Team": "PIT",
+    "Pos": "QB",
+    "FantPt": 173,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Anthony Richardson",
+    "Team": "IND",
+    "Pos": "QB",
+    "FantPt": 162,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Derek Carr",
+    "Team": "NOR",
+    "Pos": "QB",
+    "FantPt": 151,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Rachaad White",
+    "Team": "TAM",
+    "Pos": "RB",
+    "FantPt": 149,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Zach Charbonnet",
+    "Team": "SEA",
+    "Pos": "RB",
+    "FantPt": 145,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Trevor Lawrence",
+    "Team": "JAX",
+    "Pos": "QB",
+    "FantPt": 145,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Tyrone Tracy Jr.",
+    "Team": "NYG",
+    "Pos": "RB",
+    "FantPt": 144,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Rhamondre Stevenson",
+    "Team": "NWE",
+    "Pos": "RB",
+    "FantPt": 143,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Brian Robinson Jr.",
+    "Team": "WAS",
+    "Pos": "RB",
+    "FantPt": 140,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Daniel Jones",
+    "Team": "NYG",
+    "Pos": "QB",
+    "FantPt": 135,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Kenneth Walker III",
+    "Team": "SEA",
+    "Pos": "RB",
+    "FantPt": 135,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Kareem Hunt",
+    "Team": "KAN",
+    "Pos": "RB",
+    "FantPt": 132,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Jameis Winston",
+    "Team": "CLE",
+    "Pos": "QB",
+    "FantPt": 131,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Rashod Bateman",
+    "Team": "BAL",
+    "Pos": "WR",
+    "FantPt": 130,
+    "OvRank": 9999
+  },
+  {
+    "Player": "Darnell Mooney",
+    "Team": "ATL",
+    "Pos": "WR",
+    "FantPt": 129,
+    "OvRank": 9999
+  }
+]

@@ -2,48 +2,45 @@
 import { NextResponse } from "next/server";
 import { parseStringPromise } from "xml2js";
 
-const leagueKey = "nfl.l.579402"; // your league
+const accessToken = process.env.YAHOO_ACCESS_TOKEN; // keep this fresh w/ refresh flow
 
-export async function GET() {
+export async function POST(req: Request) {
   try {
-    const accessToken = process.env.YAHOO_ACCESS_TOKEN; // should be set by your refresh flow
-    if (!accessToken) {
-      return NextResponse.json({ error: "Missing YAHOO_ACCESS_TOKEN" }, { status: 500 });
+    const { leagueId } = await req.json();
+    if (!leagueId) {
+      return NextResponse.json({ error: "Missing leagueId" }, { status: 400 });
     }
 
-    const url = `https://fantasysports.yahooapis.com/fantasy/v2/league/${leagueKey}/teams`;
+    const leagueKey = `nfl.l.${leagueId}`;
+    const url = `https://fantasysports.yahooapis.com/fantasy/v2/league/${leagueKey}/teams;out=roster`;
 
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
         Accept: "application/xml",
       },
-      cache: "no-store", // prevents Next.js caching
     });
 
     if (!res.ok) {
-      const errorText = await res.text();
-      return NextResponse.json(
-        { error: `Yahoo API error: ${res.status}`, details: errorText },
-        { status: res.status }
-      );
+      const errText = await res.text();
+      throw new Error(`Yahoo API error: ${res.status} ${res.statusText} — ${errText}`);
     }
 
-    const text = await res.text();
+    const xmlText = await res.text();
+    const data = await parseStringPromise(xmlText, { explicitArray: false });
 
-    // Parse XML -> JSON
-    const data = await parseStringPromise(text, { explicitArray: false });
-
-    // Extract team names for testing
-    const teams = data?.fantasy_content?.league?.teams?.team ?? [];
-    const teamNames = Array.isArray(teams) ? teams.map((t: any) => t.name) : [teams.name];
-
-    return NextResponse.json({
-      ok: true,
-      league: leagueKey,
-      teamNames,
-      raw: text, // optional, for debugging
+    // Parse into something cleaner for AI
+    const teams = data.fantasy_content.league.teams.team;
+    const allRosters = teams.map((team: any) => {
+      const players = team.roster?.players?.player ?? [];
+      return {
+        teamName: team.name,
+        players: Array.isArray(players) ? players.map((p: any) => p.name.full) : [players.name.full],
+      };
     });
+          console.log("Rosters: ", allRosters);
+
+    return NextResponse.json({ rosters: allRosters });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
