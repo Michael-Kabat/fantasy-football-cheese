@@ -1,60 +1,77 @@
+// app/api/ai-suggestion/route.ts
 import { NextResponse } from "next/server";
-import OpenAI from "openai"; // or whichever AI SDK you’re using
 import fs from "fs";
+import path from "path";
+import OpenAI from "openai";
 
-// Make sure you have OPENAI_API_KEY in your .env.local
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-});
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-export async function POST(req: Request) {
+// Load all player stats from JSON
+function loadPlayers() {
+  const filePath = path.join(process.cwd(), "players.json");
+  const data = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(data);
+}
+
+async function getTopAvailablePlayers(leagueId: string, draftedKeys: string[], limit = 20) {
+  const allPlayers = loadPlayers();
+
+  const available = allPlayers.filter((p: { player_key: string; }) => !draftedKeys.includes(p.player_key));
+  available.sort((a:any, b:any) => b.fantasy_points - a.fantasy_points);
+
+  return available.slice(0, limit);
+}
+
+async function getAISuggestion(leagueId: string) {
   try {
-    const { rosters } = await req.json();
+    // --- Fetch live Yahoo draft and rosters ---
+    const res = await fetch(`http://localhost:3000/api/yahoo?leagueId=${leagueId}`);
+    if (!res.ok) throw new Error("Failed to fetch rosters");
 
-    if (!rosters) {
-      return NextResponse.json(
-        { error: "Missing rosters" },
-        { status: 400 }
-      );
-    }
-    const playersData = JSON.parse(fs.readFileSync("players.json", "utf-8"));
-
-    // Build a nice prompt for the model
+    const { draftedPlayers } = await res.json();
+    console.log("Drafted Players: ", draftedPlayers);
+    // --- Filter top available players ---
+    const topAvailable = await getTopAvailablePlayers(leagueId, draftedPlayers, 20);
+    console.log(topAvailable);
+    const playerList = topAvailable
+      .map((p: { name: any; position: any; team: any; fantasy_points: any; }) => `${p.name} (${p.position}, ${p.team}) - ${p.fantasy_points} pts`)
+      .join("\n");
+    console.log(playerList);
+    
     const prompt = `
-You are a fantasy football assistant. The following are all current team rosters
-from a Yahoo fantasy football league. Based on the rosters, recommend the best play
-to draft next. Give 3 players and rank them as the 1st best, 2nd best or 3rd best. 
-You also have a list of the top 25 players from the most current year, use this list
-as it is more current.
+You are an expert fantasy football draft assistant.
+Here is a list of the top available players who have NOT been drafted yet:
 
-Rosters:
-${JSON.stringify(rosters, null, 2)}
+${playerList}
 
-List of players and points: 
-Here are the available players: ${JSON.stringify(
-            playersData.slice(0, 25), // send top 50 to keep prompt size manageable
-            null,
-            2)}
--Do not use any formatting as the output will just be plain text.
--Do not just say the #1 point player, give output based on what position is best for the current situation
--The draft will be a snake draft, therefore a general strategy of elite rb/wr first and second then QB third is the best`
-    // Call the AI
-    const response = await client.chat.completions.create({
-      model: "gpt-4o-mini", // or whichever model
-      messages: [{ role: "user", content: prompt }],
-      max_tokens: 300,
+Which player would you recommend drafting next? Provide reasoning in 2-3 sentences.
+    `;
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        { role: "system", content: "You are a fantasy football assistant." },
+        { role: "user", content: prompt },
+      ],
     });
 
-    const suggestion =
-      response.choices[0].message?.content ||
-      "No suggestion generated.";
+    return completion.choices[0].message.content;
+  } catch (err: any) {
+    console.error("AI Suggestion error:", err);
+    return "Failed to get AI suggestion.";
+  }
+}
 
+// --- API Route ---
+export async function POST(req: Request) {
+  try {
+    const { leagueId } = await req.json();
+    if (!leagueId) return NextResponse.json({ error: "Missing leagueId" }, { status: 400 });
+
+    const suggestion = await getAISuggestion(leagueId);
     return NextResponse.json({ suggestion });
   } catch (err: any) {
-    console.error("AI suggestion error:", err.message);
-    return NextResponse.json(
-      { error: "Failed to generate suggestion" },
-      { status: 500 }
-    );
+    console.error(err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }

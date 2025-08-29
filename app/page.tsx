@@ -15,24 +15,24 @@ export default function HomePage() {
             setRosters([]);
 
             // Step 1: Get rosters from Yahoo
-            const res1 = await fetch("/api/yahoo", {
+            const res1 = await fetch(`/api/yahoo?leagueId=${leagueId}`);
+            if (!res1.ok) throw new Error("Failed to fetch rosters");
+
+            if (!res1.ok) throw new Error("Failed to fetch rosters");
+            const data1 = await res1.json();
+            const rostersData = data1.rosters ?? [];
+            setRosters(rostersData);
+
+            // Step 2: Ask AI for draft suggestion using leagueId
+            const res2 = await fetch("/api/ai-suggestion", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ leagueId }),
             });
-            if (!res1.ok) throw new Error("Failed to fetch rosters");
-            const { rosters } = await res1.json();
-            setRosters(rosters);
 
-            // Step 2: Send rosters to AI
-            const res2 = await fetch("/api/ai-suggestion", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ rosters }),
-            });
             if (!res2.ok) throw new Error("Failed to get AI suggestion");
-            const { suggestion } = await res2.json();
-            setSuggestion(suggestion);
+            const data2 = await res2.json();
+            setSuggestion(data2.suggestion);
         } catch (err: any) {
             alert("❌ " + err.message);
         } finally {
@@ -64,6 +64,7 @@ export default function HomePage() {
                         {loading ? "Loading..." : "Get Suggestion"}
                     </button>
                 </div>
+
                 {/* AI Suggestion */}
                 {suggestion && (
                     <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
@@ -71,6 +72,7 @@ export default function HomePage() {
                         <p>{suggestion}</p>
                     </div>
                 )}
+
                 {/* Rosters Display */}
                 {rosters.length > 0 && (
                     <div className="bg-white shadow p-4 rounded-lg">
